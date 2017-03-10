@@ -5,7 +5,6 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     'app': [
-      'babel-polyfill',
       'react-hot-loader/patch',
       './src/index'
     ]
@@ -14,9 +13,16 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js'
   },
+  resolve: {
+      // Add '.ts' and '.tsx' as a resolvable extension.
+      extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
+  },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
+      {
+        test: /\.tsx?$/,
+        loaders: ['react-hot-loader/webpack', 'awesome-typescript-loader'],
+      },
     ]
   }
 }
