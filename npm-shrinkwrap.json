@@ -1,5 +1,5 @@
 {
-  "name": "react-hot-loader-minimal-boilerplate",
+  "name": "react-ts-hot-loader-minimal-boilerplate",
   "version": "1.0.0",
   "dependencies": {
     "@types/react": {
